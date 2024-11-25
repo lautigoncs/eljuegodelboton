@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toca el boton</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <div id="sound"></div>
+    <button onclick="show()">TOCA ESTE BOTON POR FAVOR</button>
+    <script>
+        function show() {
+            document.getElementsByTagName("button")[0].style.display = "none";
+            document.getElementById("sound").innerHTML = `
+            <audio autoplay>
+                <source src="audio.mp3" type="audio/mpeg">
+            </audio>
+                `;
+            setTimeout(() => {
+                document.getElementById("content").innerHTML += `<img src="pic.gif">`;
+            }, 1300);
+        }
+    </script>
+</body>
+</html>
